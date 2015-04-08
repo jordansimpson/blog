@@ -1,0 +1,18 @@
+/* 
+------------
+COMPONENTS.
+MAIN FOOTER
+------------ 
+*/
+
+.main-footer{
+	width: 100%;
+	float: left;
+}
+
+	.main-footer__bordered-container{
+		border-top: 3px solid $border-clr;
+		float: left;
+		width: 100%;
+		@include remCalc(padding-top, $spacer--dbl);
+	}

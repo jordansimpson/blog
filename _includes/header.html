@@ -1,0 +1,23 @@
+<header class="main-header">
+    <div class="grid">
+        <div class="grid__row">
+            <div class="grid__col grid__col--12-12">
+                <nav class="frontly-nav frontly-nav--big frontly-nav--underlined">
+                    <a class="frontly-nav__text frontly-nav__text--brand-name" href="/">Jordan W. Simpson</a>
+                    <a href="#" class="frontly-nav__menu-link float--right hidden display--mobile"><i class="fa fa-fw fa-bars"></i> Menu</a>
+                    <ul class="frontly-nav--right">
+                        {% for page in site.pages %}
+                            {% if page.title != 404 %}
+                                {% if page.title %}
+                                    <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <li><a href="http://twitter.com/jordan_simpson"><i class="fa fa-fw fa-twitter"></i> Twitter</a></li>
+                        <li><a href="http://instagram.com/jordan_simpson"><i class="fa fa-fw fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

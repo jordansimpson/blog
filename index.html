@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<section class="posts-list">
+    <div class="grid">
+        <div class="grid__row">
+            <div class="grid__col grid__col--12-12">
+                <h3 class="section-header">Latest Articles</h3>
+                <ul class="grid__row grid__row--no-gutters list--unstyled grid__row--central">
+                    {% for post in site.posts limit:1 %}
+                    <li class="grid__col grid__col--8-12">
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="post__item post__item--latest">
+                            <article>
+                                <header>
+                                    <h1>{{ post.title }}</h1>
+                                    <span class="post__date">published {{ post.date | date: "%d.%m.%Y" }}</span>
+                                </header>
+                            </article>
+                        </a>
+                    </li>
+                    {% endfor %}
+                    {% for post in site.posts limit:6 offset:1 %}
+                    <li class="grid__col grid__col--8-12">
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="post__item">
+                            <article>
+                                <header>
+                                    <h2>{{ post.title }}</h2>
+                                    <span class="post__date">published {{ post.date | date: "%d.%m.%Y" }}</span>
+                                </header>
+                            </article>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
